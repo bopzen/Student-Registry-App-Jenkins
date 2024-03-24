@@ -9,14 +9,6 @@ pipeline {
             }
         }
         
-        stage('Setting up Node.js') {
-            steps {
-                // Install Node.js (replace with your Node.js setup steps if needed)
-                sh 'curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -'
-                sh 'sudo apt-get install -y nodejs'
-            }
-        }
-        
         stage('Installing dependencies') {
             steps {
                 // Install Node.js dependencies (replace with your dependency installation command)
