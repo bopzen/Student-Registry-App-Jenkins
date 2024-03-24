@@ -26,8 +26,8 @@ pipeline {
         
         stage('Starting the application') {
             steps {
-                // Start the Node.js application (replace with your start command)
-                sh 'npm start &'
+                // Start the Node.js application in the background
+                bat 'start npm start'
             }
         }
         
