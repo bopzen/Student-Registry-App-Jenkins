@@ -1,32 +1,22 @@
 pipeline {
     agent any
-    
+
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the source code from the repository
-                git 'https://github.com/bopzen/Student-Registry-App-Jenkins.git'
+                checkout scm
             }
         }
-        
-        stage('Installing dependencies') {
+
+        stage('Install dependencies') {
             steps {
-                // Install Node.js dependencies (replace with your dependency installation command)
-                sh 'npm install'
+                bat 'npm install'
             }
         }
-        
-        stage('Starting the application') {
+
+        stage('Run tests') {
             steps {
-                // Start the Node.js application in the background
-                bat 'start npm start'
-            }
-        }
-        
-        stage('Running tests') {
-            steps {
-                // Run tests (replace with your test command)
-                sh 'npm test'
+                bat 'npm run test'
             }
         }
     }
